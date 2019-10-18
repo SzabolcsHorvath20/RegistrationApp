@@ -15,6 +15,19 @@ namespace RegistrationApp
         public Form1()
         {
             InitializeComponent();
+            hobbylist.Items.Add("Cook");
+            hobbylist.Items.Add("Gardener");
+            hobbylist.Items.Add("Gamer");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hobbylist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
