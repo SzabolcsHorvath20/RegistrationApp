@@ -27,11 +27,11 @@ namespace RegistrationApp
                     StreamWriter write = new StreamWriter(fileName);
                     if (rbmale.Checked)
                     {
-                        write.WriteLine(tbname.Text + ";" + tbdob.Text + ";male;" + hobbylist.SelectedItem + ";");
+                        write.Write(tbname.Text + ";" + tbdob.Text + ";male;" + hobbylist.SelectedItem + ";");
                     }
                     if (rbfemale.Checked)
                     {
-                        write.WriteLine(tbname.Text + ";" + tbdob.Text + ";female;" + hobbylist.SelectedItem + ";");
+                        write.Write(tbname.Text + ";" + tbdob.Text + ";female;" + hobbylist.SelectedItem + ";");
                     }
                     foreach (var item in hobbylist.Items)
                     {
@@ -43,6 +43,41 @@ namespace RegistrationApp
                 catch (Exception)
                 {
                     MessageBox.Show("Error, the data could not be saved.");
+                }
+            };
+            fdOpen.FileOk += (sender, e) =>
+            {
+                try
+                {
+                    hobbylist.Items.Clear();
+                    StreamReader read = new StreamReader(fdOpen.FileName);
+                    string line = read.ReadLine();
+                    string[] split = line.Split(';');
+                    tbname.Text = split[0];
+                    tbdob.Text = split[1];
+                    if (split[2] == "male")
+                    {
+                        rbmale.Checked = true;
+                    }
+                    if (split[2] == "female")
+                    {
+                        rbfemale.Checked = true;
+                    }
+                    string[] splithobby = split[4].Split(',');
+                    for (int i = 0; i < splithobby.Length-1; i++)
+                    {
+                        hobbylist.Items.Add(splithobby[i]);
+                        if (split[3] == splithobby[i])
+                        {
+                            hobbylist.SelectedItem = split[3];
+                        }
+                    }
+                    read.Close();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error, the data could not be loaded.");
                 }
             };
         }
@@ -70,6 +105,16 @@ namespace RegistrationApp
         private void Savebtn_Click(object sender, EventArgs e)
         {
             fdSave.ShowDialog();
+        }
+
+        private void Loadbtn_Click(object sender, EventArgs e)
+        {
+            fdOpen.ShowDialog();
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -174,6 +174,7 @@
             this.Loadbtn.TabIndex = 12;
             this.Loadbtn.Text = "Load";
             this.Loadbtn.UseVisualStyleBackColor = true;
+            this.Loadbtn.Click += new System.EventHandler(this.Loadbtn_Click);
             // 
             // Savebtn
             // 
@@ -195,6 +196,7 @@
             this.btnexit.TabIndex = 14;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // fdOpen
             // 
