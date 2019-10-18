@@ -43,6 +43,8 @@
             this.Loadbtn = new System.Windows.Forms.Button();
             this.Savebtn = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
+            this.fdOpen = new System.Windows.Forms.OpenFileDialog();
+            this.fdSave = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -161,6 +163,7 @@
             this.Addbtn.TabIndex = 11;
             this.Addbtn.Text = "Add to list";
             this.Addbtn.UseVisualStyleBackColor = true;
+            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // Loadbtn
             // 
@@ -181,6 +184,7 @@
             this.Savebtn.TabIndex = 13;
             this.Savebtn.Text = "Save";
             this.Savebtn.UseVisualStyleBackColor = true;
+            this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
             // btnexit
             // 
@@ -191,6 +195,15 @@
             this.btnexit.TabIndex = 14;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
+            // 
+            // fdOpen
+            // 
+            this.fdOpen.FileName = "openFileDialog1";
+            // 
+            // fdSave
+            // 
+            this.fdSave.Filter = "Text File|*.txt|All files|*.*";
+            this.fdSave.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // Form1
             // 
@@ -236,6 +249,8 @@
         private System.Windows.Forms.Button Loadbtn;
         private System.Windows.Forms.Button Savebtn;
         private System.Windows.Forms.Button btnexit;
+        private System.Windows.Forms.OpenFileDialog fdOpen;
+        private System.Windows.Forms.SaveFileDialog fdSave;
     }
 }
 
