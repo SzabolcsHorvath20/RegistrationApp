@@ -35,7 +35,7 @@ namespace RegistrationApp
                     }
                     foreach (var item in hobbylist.Items)
                     {
-                        write.Write(item+",");
+                        write.Write(item + ",");
                     }
                     write.Close();
 
@@ -94,7 +94,10 @@ namespace RegistrationApp
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            hobbylist.Items.Add(tbhobby.Text);
+            if (!hobbylist.Items.Contains(tbhobby.Text) && (tbhobby.Text != ""))
+            {
+                hobbylist.Items.Add(tbhobby.Text);
+            }
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -104,7 +107,10 @@ namespace RegistrationApp
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
-            fdSave.ShowDialog();
+            if (tbdob.Text != "" && tbname.Text != "" && !hobbylist.SelectedItem.Equals("") && (rbmale.Checked == true || rbfemale.Checked == true))
+            {
+                fdSave.ShowDialog();
+            }
         }
 
         private void Loadbtn_Click(object sender, EventArgs e)

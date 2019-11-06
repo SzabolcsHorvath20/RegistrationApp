@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbname = new System.Windows.Forms.TextBox();
-            this.tbdob = new System.Windows.Forms.TextBox();
             this.rbmale = new System.Windows.Forms.RadioButton();
             this.rbfemale = new System.Windows.Forms.RadioButton();
             this.hobbylist = new System.Windows.Forms.ListBox();
@@ -45,6 +44,7 @@
             this.btnexit = new System.Windows.Forms.Button();
             this.fdOpen = new System.Windows.Forms.OpenFileDialog();
             this.fdSave = new System.Windows.Forms.SaveFileDialog();
+            this.tbdob = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -82,15 +82,8 @@
             // 
             this.tbname.Location = new System.Drawing.Point(168, 8);
             this.tbname.Name = "tbname";
-            this.tbname.Size = new System.Drawing.Size(100, 20);
+            this.tbname.Size = new System.Drawing.Size(112, 20);
             this.tbname.TabIndex = 3;
-            // 
-            // tbdob
-            // 
-            this.tbdob.Location = new System.Drawing.Point(168, 34);
-            this.tbdob.Name = "tbdob";
-            this.tbdob.Size = new System.Drawing.Size(100, 20);
-            this.tbdob.TabIndex = 4;
             // 
             // rbmale
             // 
@@ -207,11 +200,19 @@
             this.fdSave.Filter = "Text File|*.txt|All files|*.*";
             this.fdSave.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
+            // tbdob
+            // 
+            this.tbdob.Location = new System.Drawing.Point(168, 34);
+            this.tbdob.Name = "tbdob";
+            this.tbdob.Size = new System.Drawing.Size(112, 20);
+            this.tbdob.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 262);
+            this.Controls.Add(this.tbdob);
             this.Controls.Add(this.btnexit);
             this.Controls.Add(this.Savebtn);
             this.Controls.Add(this.Loadbtn);
@@ -222,7 +223,6 @@
             this.Controls.Add(this.hobbylist);
             this.Controls.Add(this.rbfemale);
             this.Controls.Add(this.rbmale);
-            this.Controls.Add(this.tbdob);
             this.Controls.Add(this.tbname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -240,7 +240,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbname;
-        private System.Windows.Forms.TextBox tbdob;
         private System.Windows.Forms.RadioButton rbmale;
         private System.Windows.Forms.RadioButton rbfemale;
         private System.Windows.Forms.ListBox hobbylist;
@@ -253,6 +252,7 @@
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.OpenFileDialog fdOpen;
         private System.Windows.Forms.SaveFileDialog fdSave;
+        private System.Windows.Forms.DateTimePicker tbdob;
     }
 }
 
