@@ -107,9 +107,13 @@ namespace RegistrationApp
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
-            if (tbdob.Text != "" && tbname.Text != "" && !hobbylist.SelectedItem.Equals("") && (rbmale.Checked == true || rbfemale.Checked == true))
+            if (tbdob.Text.Trim() != "" && tbname.Text.Trim() != "" && !hobbylist.SelectedItem.Equals("") && (rbmale.Checked == true || rbfemale.Checked == true))
             {
                 fdSave.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("There are some information missing,\n please fill out the from in order to save", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
